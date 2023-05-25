@@ -5,6 +5,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Checkbox
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.shadow
@@ -37,8 +40,26 @@ import com.topic2.android.notes.theme.rwGreen
             .weight(1f)
             .align(Alignment.CenterVertically)
         ) {
-            Text(text = "Заголовок", maxLines = 1)
-            Text(text = "Содержимое", maxLines = 1)
+            Text(
+                text = "Заголовок",
+                color = Color.Black.copy(alpha = 0.75f),
+                maxLines = 1,
+                style = TextStyle(
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 16.sp,
+                    letterSpacing = 0.15.sp
+                )
+            )
+            Text(
+                text = "Содержимое",
+                color = Color.Black.copy(alpha = 0.75f),
+                maxLines = 1,
+                style = TextStyle(
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 14.sp,
+                    letterSpacing = 0.25.sp
+                )
+            )
         }
         Checkbox(
             checked = false,
