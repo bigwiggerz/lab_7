@@ -3,6 +3,7 @@ package com.topic2.android.notes
 import android.os.Bundle
 import android.annotation.SuppressLint
 import androidx.activity.viewModels
+import com.topic2.android.notes.ui.components.screens.NotesScreen
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.Scaffold
@@ -36,6 +37,7 @@ class   MainActivity : AppCompatActivity() {
 
     setContent {
       NotesTheme {
+        NotesScreen(viewModel = viewModel)
         val coroutineScope = rememberCoroutineScope()
         val scaffoldState: ScaffoldState = rememberScaffoldState()
         Scaffold(
