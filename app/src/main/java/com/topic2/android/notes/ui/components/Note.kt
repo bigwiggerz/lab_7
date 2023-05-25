@@ -94,6 +94,6 @@ private fun NotePreview() {
             "Заметка 1",
             "Содержание 1",
             null
-        )
+        ),
     )
 }
