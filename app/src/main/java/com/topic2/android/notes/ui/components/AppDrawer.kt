@@ -1,6 +1,7 @@
 package com.topic2.android.notes.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.material.Switch
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Surface
@@ -19,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.topic2.android.notes.theme.NotesThemeSettings
 import com.topic2.android.notes.theme.NotesTheme
 
 @Composable
@@ -110,6 +112,31 @@ fun ScreenNavigationButtonPreview() {
             label = "Заметки",
             isSelected = true,
             onClick = {}
+        )
+    }
+}
+
+@Composable
+private fun LightDarkThemeItem(){
+    Row(
+        Modifier
+            .padding(8.dp)
+    ) {
+        Text(
+            text = "Включить тёмную тему",
+            style = MaterialTheme.typography.body2,
+            color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f),
+            modifier = Modifier
+                .weight(1f)
+                .padding(start = 8.dp, end = 8.dp, top = 8.dp, bottom = 8.dp)
+                .align(alignment = Alignment.CenterVertically)
+        )
+        Switch(
+            checked = NotesThemeSettings.isDarkThemeEnabled,
+            onCheckedChange ={ NotesThemeSettings.isDarkThemeEnabled = it},
+            modifier = Modifier
+                .padding(start = 8.dp, end = 8.dp)
+                .align(alignment = Alignment.CenterVertically)
         )
     }
 }
