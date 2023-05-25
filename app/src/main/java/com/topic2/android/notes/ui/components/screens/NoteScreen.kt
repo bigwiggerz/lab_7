@@ -10,6 +10,7 @@ import com.topic2.android.notes.routing.Screen
 import com.topic2.android.notes.ui.components.AppDrawer
 import kotlinx.coroutines.launch
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.List
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -85,6 +86,19 @@ fun NotesScreen(viewModel: MainViewModel) {
                     coroutineScope.launch {
                         scaffoldState.drawerState.close()
                     }
+                }
+            )
+        },
+        floatingActionButtonPosition = FabPosition.End,
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = { viewModel.onCreateNewNoteClick() },
+                contentColor = MaterialTheme.colors.background,
+                content = {
+                    Icon(
+                        imageVector = Icons.Filled.Add,
+                        contentDescription = "Add Note Button"
+                    )
                 }
             )
         },

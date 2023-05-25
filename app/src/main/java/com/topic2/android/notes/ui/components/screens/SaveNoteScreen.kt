@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import com.topic2.android.notes.viewmodel.MainViewModel
 import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,6 +21,11 @@ import androidx.compose.ui.text.font.FontWeight
 import com.topic2.android.notes.ui.fromHex
 import com.topic2.android.notes.domain.model.ColorModel
 
+
+@Composable
+fun SaveNoteScreen(viewModel: MainViewModel){
+
+}
 @Composable
 fun ColorItem(
     color: ColorModel,

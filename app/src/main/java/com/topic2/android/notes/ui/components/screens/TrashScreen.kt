@@ -1,4 +1,4 @@
-package com.topic2.android.notes.ui.components.screens
+package com.topic2.android.notes.ui.screens
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
@@ -27,7 +27,7 @@ private const val PERMANENTLY_DELETE_DIALOG = 3
 @ExperimentalMaterialApi
 fun TrashScreen(viewModel: MainViewModel) {
 
-    val notesInThrash: List<NoteModel> by viewModel.notesInTrash
+    val notesInThrash: List<NoteModel> by viewModel.notesNotInTrash // тут ошика
         .observeAsState(listOf())
 
     val selectedNotes: List<NoteModel> by viewModel.selectedNotes
@@ -186,7 +186,7 @@ private fun Content(
                 val isNoteSelected = selectedNotes.contains(note)
                 Note(
                     note = note,
-                    onNoteClick = onNoteClick
+                    onNoteClick = onNoteClick,
                 )
             }
         }
