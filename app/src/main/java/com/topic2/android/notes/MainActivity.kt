@@ -10,7 +10,7 @@ import com.topic2.android.notes.viewmodel.MainViewModelFactory
 /**
  * Main activity приложения.
  */
-class MainActivity : AppCompatActivity() {
+class   MainActivity : AppCompatActivity() {
 
   private val viewModel: MainViewModel by viewModels(factoryProducer = {
     MainViewModelFactory(
